@@ -1,0 +1,25 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{F-statistics, Granger Causality Test: Innovation Effort}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                    &     general&        tech&        know&       train\\
+\hline
+model               &            &            &            &            \\
+$Export.Intensity_{t}$&           +&           +&           -&           +\\
+$Export.Intensity_{t-1}$&           -&           -&           +&           -\\
+FE Other Expend.    &          No&         Yes&         Yes&         Yes\\
+FE Sector           &         Yes&         Yes&         Yes&         Yes\\
+FE Geog             &         Yes&         Yes&         Yes&         Yes\\
+\hline
+F-estat.            &        1.25&        2.09&        0.10&        0.89\\
+Prob $>$ F          &        0.29&        0.12&        0.91&        0.41\\
+Obs.                &       2,317&       2,317&       2,317&       2,317\\
+Obs.Uncensured      &         579&         482&          92&         255\\
+Obs.Censured        &       1,738&       1,835&       2,225&       2,062\\
+Estimation          &       tobit&       tobit&       tobit&       tobit\\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize Source: Author's elaboration based on information from the EIT and Enia.}\\
+\multicolumn{5}{l}{\footnotesize Control Var: Labor, Foreign Property.}\\
+\end{tabular}
+\end{table}

@@ -1,0 +1,233 @@
+\documentclass[upright, contnum, 11pt]{article}
+\usepackage[top=3cm, left=3.0cm, bottom=3cm, right=3.0cm, paper=letterpaper]{geometry}%Margenes
+\usepackage{amsmath,amsthm,amsfonts,ams	symb}
+\usepackage{lipsum}
+
+\usepackage{selinput}
+\SelectInputMappings{aacute={á}, ntilde={ñ}, Euro={€}}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}%\usepackage[USenglish]{babel}
+
+%charts
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,shapes.symbols,chains,decorations.pathreplacing}
+%\usepackage[miktex]{gnuplottex}
+
+%\usepackage{Sweave}%R package Sweave
+\usepackage{booktabs,tabularx,float}%TABLAS
+\usepackage{ctable,subfigure,longtable,rotating,graphicx}%figuras
+\usepackage[flushleft]{threeparttablex}
+\usepackage{multirow}
+\usepackage{fixltx2e}
+
+%\usepackage[belowskip=0pt,aboveskip=0pt]{caption}
+%\captionsetup[table]{belowskip=0pt,aboveskip=0pt}
+\usepackage[hang,normalsize,bf,font=normalsize,skip=0pt]{caption}
+
+\usepackage{placeins}
+
+
+\usepackage{chngcntr}
+\counterwithin{figure}{subsection}
+\counterwithin{table}{subsection}
+\counterwithin{equation}{subsection}
+
+\AtBeginDocument{\renewcommand\tablename{Tabla}}
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\renewcommand{\thetable}{\arabic{subsection}.\arabic{table}}
+\renewcommand{\thefigure}{\arabic{subsection}.\arabic{figure}}
+\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+
+%\setlength{\belowcaptionskip}{-50pt}
+%\setlength{\textfloatsep}{10pt plus 1.0pt minus 5.0pt}
+
+%bibliografia, cita y referencias
+%\usepackage[sort&compress,round,comma,authoryear]{natbib}
+\usepackage[round,comma,authoryear]{natbib}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue,bookmarks=true]{hyperref}%color citation
+\bibliographystyle{plainnat}
+
+%exponential math 
+\newcommand{\me}{\mathrm{e}}
+
+\renewcommand{\figureautorefname}{Figura}
+
+%hay que instalarlo	
+%\usepackage[section,subsection,subsubsection]{extraplaceins}
+
+% subfig setup
+%\usepackage[labelformat=simple]{subfig}
+%\renewcommand\thesubfigure{(\alph{subfigure})}
+%\newcommand{\subfigureautorefname}{\figureautorefname}
+
+%Interlineado, margenes
+%\setlength{\parskip}{\baselineskip}
+\setlength{\parskip}{0.7em}
+\setlength{\parindent}{0em}%margen de los parrafos
+\usepackage{indentfirst}% Le da inden(margen) al primer parrafo
+\usepackage{scrextend}%para dar margenes especiales a parrafos
+\usepackage{etex}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+\titleformat*{\paragraph}{\normalsize\bfseries}
+\titleformat*{\subparagraph}{\normalsize\bfseries}
+
+\renewcommand{\thesection}{\roman{section}} 
+\renewcommand{\thesubsection}{\arabic{subsection}} 
+
+\titlespacing*{\section}{0pt}{2.0ex}{0.0ex}
+\titlespacing*{\subsection}{0pt}{2.0ex}{0.0ex}
+\titlespacing*{\subsubsection}{0pt}{2.0ex}{0.0ex}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\newcommand{\Solow}{\emph{Growth--Accounting}}
+
+\newcounter{example}
+\newenvironment{ejemplo}[1][]{\begin{center}\begin{tabular}{|p{1.0\textwidth}|}\hline
+    \refstepcounter{example} \noindent \textbf{Ejemplo~\theexample.} #1 \rmfamily\\}
+    {
+    \\\hline
+    \end{tabular} 
+    \end{center}}
+
+
+\title{\textbf{Mediciones de Productividad a Nivel Macro en Chile}\\ Una Revisión de la literatura\footnote{Fernando Greve. Email: \href{mailto:fgreve@cnp.gob.cl}{fgreve@cnp.gob.cl}}} 
+
+\vspace{10mm}
+\author{Nota Técnica No.3}
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+\maketitle
+
+\begin{abstract} En este documento se realiza una revisión de los estudios que han medido la productividad agregada en Chile. 
+-Metodología de estimación de productividad utilizada es la misma en la gran mayoría de los estudios.
+-Ajustados y no ajustados (factores productivos)
+-Existe una gran dispersión de resultados, a pesar de que la metodología es la misma.\end{abstract}
+
+\section{Introducción}
+\input{intro}
+
+\section{Estudios que Miden la Productividad Agregada en Chile}
+\subsection{\cite{Bergoeing}}
+\input{rafa}
+\input{rafa-tab}
+\input{rafa-fig}
+
+\clearpage 
+\subsection{\cite{DeGregorio}}
+\input{pepo}
+\input{pepo-tab}
+\input{pepo-fig}
+
+\clearpage
+\subsection{\cite{Vergara}}
+\input{vergara}
+\input{vergara-tab}
+\input{vergara-fig}
+
+\clearpage
+\subsection{\cite{Roldos}}
+\input{roldos}
+\input{Roldos-tab}
+\input{Roldos-fig}
+
+\clearpage
+\subsection{\cite*{Fuentes-Larrain-SchmidtHebbel}}
+\input{Fuentes-Larrain-SchmidtHebbel}
+
+\input{Fuentes-Larrain-SchmidtHebbel-tab1}
+\input{Fuentes-Larrain-SchmidtHebbel-fig1}
+
+\input{Fuentes-Larrain-SchmidtHebbel-tab2}
+\input{Fuentes-Larrain-SchmidtHebbel-fig2}
+
+\clearpage
+\subsection{\cite{Chumacero-Fuentes}}
+\input{Chumacero-Fuentes}
+\input{Chumacero-Fuentes-tab1}
+\input{Chumacero-Fuentes-tab2}
+\input{Chumacero-Fuentes-tab3}
+
+\clearpage
+\subsection{\citep{Gallego-Loayza}}
+\input{Gallego-Loayza}
+\input{Gallego-Loayza-tab}
+%falta la figura
+
+\clearpage
+\subsection{\cite*{Rojas-Lopez-Jimenez}}
+\input{Rojas-Lopez-Jimenez}
+\input{rojas-tab}
+\input{rojas-fig}
+
+\clearpage
+\subsection{\cite*{cepal}}
+\input{cepal}
+\input{cepal-tab}
+
+\clearpage
+\subsection{\cite*{Beyer-Vergara}}
+%\input{beyer-vergara}
+\input{Beyer-Vergara-tab}
+\input{beyer-vergara-fig}
+
+\clearpage
+\subsection{\cite*{Fuentes-Morales}}
+\input{Fuentes-Morales-tab}
+\input{fuentes-morales-fig}
+
+\clearpage
+\subsection{\cite*{coeymans}}
+\input{coeymans-tab}
+\input{coeymans-fig}
+
+\clearpage
+\subsection{\cite{DeGregorio1997}}
+\input{pepo1997-tab}
+\input{pepo1997-fig}
+
+\clearpage
+\subsection{magendzo}
+\input{magendzo-tab}
+\input{magendzo-fig}
+
+\clearpage
+\subsection{\cite{corbo}}
+\input{corbo-tab-1}
+\input{corbo-tab-2}
+\input{corbo-fig}
+
+\section{Análisis y Discusión}
+\clearpage
+%\input{LaTabla}
+
+\subsection{Productividad Total de Factores PTF}
+\input{ptf}
+
+\subsection{Los Datos}
+\input{datos}
+
+\subsection{La Función de Producción}
+%\input{funcion}
+
+\subsection{La Interpretación de los Resultados}
+%\input{interpetacion}
+
+%\input{conclusiones.tex}
+
+\clearpage
+\bibliography{bib-RevProdMacro}
+\nocite{*}
+
+%Anexo: calculo indices de calidad de Roldos
+
+%rafa anexo
+
+\end{document}

@@ -1,0 +1,68 @@
+\documentclass[preprint,11pt]{article}
+\usepackage[top=3cm, left=3.0cm, bottom=3cm, right=3.0cm, paper=letterpaper]{geometry}%Margenes
+
+\providecommand{\keywords}[1]{\textbf{Keywords:} #1}
+
+\usepackage{amssymb}
+
+\usepackage{lineno}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+\titleformat*{\paragraph}{\normalsize\bfseries}
+\titleformat*{\subparagraph}{\normalsize\bfseries}
+
+%Interlineado, margenes
+%\setlength{\parskip}{\baselineskip}
+\setlength{\parskip}{0.7em}
+\setlength{\parindent}{0em}%margen de los parrafos
+\usepackage{indentfirst}% Le da inden(margen) al primer parrafo
+\usepackage{scrextend}%para dar margenes especiales a parrafos
+
+%bibliografia, cita y referencias
+\usepackage[sort&compress,round,comma,authoryear]{natbib}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue,bookmarks=true]{hyperref}%color links
+\bibliographystyle{plainnat}%Choose a bibliograhpic style= unsrtnat
+
+\usepackage{booktabs}
+
+\title{Innovation-exports behavior in developing countries: 
+How this causal relationship change in acquisition of knowledge or R\&D?}
+
+\author{\bfseries{Fernando Greve}}
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+\maketitle
+
+\begin{abstract} Using micro-level data from a developing country (Chile), I study an econometric causality test (Granger) to study the relationship between the innovation effort and the exports propensity, considering how this causal relationship change under technological adoption or R\&D expenditures. The results show a difference in the causal direction between innovation and exports according to the type of innovation engaged, where the acquisition of knowledge shows a mutual reinforcing (reciprocal causality); rather that R\&D expenditure, where causality is found from exports towards innovation (Learning-by-Exporting) and not in the opposite direction. Both the former idea and result are important given that the main source of technological progress in developing countries is related to technological adoption from developed countries, rather that in-house R\&D.\end{abstract}
+
+\keywords{Exports, Innovation, Learning-by-Exporting, Self-Selection, Mutual Reinforcement, Granger Causality Test, Developing Countries}
+
+
+\linenumbers
+\input{intro.tex}
+%\input{RevLit.tex}
+%\input{data.tex}
+
+\input{estdesc0}
+
+\input{estdesc1}
+
+\input{estdesc2}
+
+%\input{estdesc3}
+
+\input{GrangerExportacion}
+
+\input{GrangerGasto}
+
+%\input{conclusiones.tex}
+
+\newpage
+\bibliography{bib-fg}
+%\nocite{*}
+
+\end{document}

@@ -1,0 +1,25 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{F-statistics, Granger Causality Test: Export Intensity}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                    &     general&        tech&        know&       train\\
+\hline
+model               &            &            &            &            \\
+$Innov.Effort_{t}$  &           -&           -&           -&           -\\
+$Innov.Effort_{t-1}$&           +&           -&           +&           +\\
+FE Other Expend.    &          No&         Yes&         Yes&         Yes\\
+FE Sector           &         Yes&         Yes&         Yes&         Yes\\
+FE Geog             &         Yes&         Yes&         Yes&         Yes\\
+\hline
+F-stat.             &        0.00&        0.04&        0.61&        0.89\\
+Prob $>$ F          &        1.00&        0.96&        0.54&        0.41\\
+Obs.                &       2,317&       2,317&       2,317&       2,317\\
+Obs.Uncensured      &         364&         364&         364&         364\\
+Obs.Censured        &       1,953&       1,953&       1,953&       1,953\\
+Estimation          &       tobit&       tobit&       tobit&       tobit\\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize Source: Author's elaboration based on information from the EIT and Enia.}\\
+\multicolumn{5}{l}{\footnotesize Control Var: Labor, Foreign Property.}\\
+\end{tabular}
+\end{table}
